@@ -6,16 +6,23 @@
     <title>Text Encryptor</title>
 </head>
 <body>
-    <main>
+    <main class="flex-container">
         <div class="input-area">
-            <textarea id="input-area__text" cols="30" rows="10"></textarea>
+            <input id="input-area__text"></input>
+            <img src="#" alt="info-icon"><p class="input-area__info">Only small letters, without accents or special characters</p>
             <button>Encrypt</button>
             <button>Decrypt</button>
         </div>
         <div class="output-area">
-            <textarea id="output-area__text" cols="30" rows="10"></textarea>
+            <textarea id="output-area__text" readonly="readonly"></textarea>
             <button>Copy</button>
         </div>
     </main>
+    <footer>
+        <img src="#" alt="Github Icon">
+        <img src="#" alt="LinkedIn Icon">
+        <img src="#" alt="Discord Icon">
+        <p>Julián Múnera - 2024</p>
+    </footer>
 </body>
 </html>
