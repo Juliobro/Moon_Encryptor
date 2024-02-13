@@ -3,26 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Text Encryptor</title>
 </head>
 <body>
     <main class="flex-container">
-        <div class="input-area">
-            <input id="input-area__text"></input>
-            <img src="#" alt="info-icon"><p class="input-area__info">Only small letters, without accents or special characters</p>
-            <button>Encrypt</button>
-            <button>Decrypt</button>
-        </div>
-        <div class="output-area">
-            <textarea id="output-area__text" readonly="readonly"></textarea>
-            <button>Copy</button>
-        </div>
+        <section class="input-area">
+            <input id="input-text" class="text-area"></input>
+            <div class="input-area__info">
+                <img src="img/icons/info-circle-svgrepo-com.svg" alt="Info icon">
+                <p>Only small letters, without accents or special characters</p>
+            </div>
+            <div class="buttons">
+                <button class="buttons__button">Encrypt</button>
+                <button class="buttons__button buttons__button--transparent">Decrypt</button>
+            </div>
+        </section>
+        <section class="output-area">
+            <textarea id="output-text" class="text-area" readonly="readonly"></textarea>
+        </section>
     </main>
     <footer>
-        <img src="#" alt="Github Icon">
-        <img src="#" alt="LinkedIn Icon">
-        <img src="#" alt="Discord Icon">
         <p>Julián Múnera - 2024</p>
+        <img src="img/icons/github-svgrepo-com.svg" alt="Github Icon">
+        <img src="img/icons/linkedin-svgrepo-com.svg" alt="LinkedIn Icon">
+        <img src="img/icons/discord-svgrepo-com.svg" alt="Discord Icon">
     </footer>
 </body>
 </html>

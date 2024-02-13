@@ -1,0 +1,112 @@
+:root {
+    --clear: #f2f7fa;
+    --blue: #0a3871;
+} /* ECF5F8 */
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+
+body {
+    background-color: var(--clear);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+    font-weight: 200;
+    height: 85vh;
+}
+
+.input-area {
+    width: 65%;
+    height: 100%;
+    padding: 2em 0 0 1.5em;
+    position: relative;
+}
+
+#input-text {
+    width: 90%;
+    height: 80%;
+    margin-bottom: 0;
+}
+
+.input-area__info p {
+    display: inline-block;
+    position: relative;
+    bottom: 2.6px;
+    right: 1.5px;
+}
+
+.input-area__info img {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 2px;
+}
+
+.buttons {
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    bottom: 3%;
+    right: 0;
+    left: 0;
+    width: 80%;
+    margin: auto;
+    padding: 0 80px;
+}
+
+.buttons__button {
+    padding: 10px 60px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--blue);
+    color: var(--clear);
+    font-weight: 200;
+}
+
+.buttons__button--transparent {
+    background-color: var(--clear);
+    color: var(--blue);
+    border: 1px solid var(--blue);
+    font-weight: 300;
+}
+
+.output-area {
+    width: 35%;
+    min-width: 200px;
+}
+
+#output-text {
+    resize: none;
+    width: 90%;
+    height: 100%;
+}
+
+.text-area {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 0px 56px -14px rgba(0,0,0,0.15);
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    margin-top: auto;
+    font-size: 80%;
+    width: 100%;
+    font-weight: 300;
+}
+
+footer img {
+    width: 25px;
+    height: 25px;
+    margin: 0 0.2em;
+}
