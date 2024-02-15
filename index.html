@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +8,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Text Encryptor</title>
+    <link rel="icon" href="img/logo/moon-encryptor-icon-clear.png">
+    <title>Moon Encryptor</title>
 </head>
 <body>
+    <header>
+        <div class="logo"><img src="img/logo/moon-encryptor-logotext.png" alt="Moon Encryptor logo"></div>
+        <button id="switch" class="switch active">
+            <span><img src="img/icons/moon.png"></span>
+            <span><img src="img/icons/sun.png"></span>
+        </button>
+        <fieldset>
+            <select>
+                <option>English</option>
+                <option>Español</option>
+            </select>
+        </fieldset>
+    </header>
     <main class="flex-container">
         <section class="input-area">
-            <input id="input-text" class="text-area"></input>
+            <textarea id="input-text" class="text-area" placeholder="Write your message here"></textarea>
             <div class="input-area__info">
                 <img src="img/icons/info-circle-svgrepo-com.svg" alt="Info icon">
                 <p>Only small letters, without accents or special characters</p>

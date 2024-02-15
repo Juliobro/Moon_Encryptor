@@ -15,11 +15,101 @@ body {
     min-height: 100vh;
 }
 
+header {
+    background-color: white;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60px;
+    padding: 5px 5%;
+    border-bottom: 1px solid rgba(10, 56, 113, 0.2);
+}
+
+.logo {
+    margin-right: auto;
+}
+
+.logo img {
+    height: 55px;
+    width: auto;
+}
+
+.switch {
+    background-color: #d3e3e5;
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    outline: none;
+    margin-right: 3%;
+}
+
+.switch::after {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    background-color: var(--clear);
+    top: 0;
+    left: 0;
+    right: unset;
+    border-radius: 100px;
+    transition: 0.5 ease all;
+    box-shadow: 0px 0px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* .active {
+    background-color: var(--blue);
+}
+
+.active::after {
+    right: 0;
+    left: unset;
+} */
+
+span {
+    height: 25px;
+    width: 25px;
+    line-height: 25px;
+    display: block;
+    background: none;
+    color: white;
+    padding: 2px;
+}
+
+span img {
+    height: 16px;
+    width: auto;
+}
+
+fieldset {
+    display: inline-block;
+    border: none;
+}
+
+select {
+    border: none;
+    outline: none;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+select option {
+    font-weight: 300;
+    font-size: 14px;
+}
+
 .flex-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 20px;
+    margin-top: 80px;
     font-weight: 200;
     height: 85vh;
 }
@@ -32,9 +122,17 @@ body {
 }
 
 #input-text {
-    width: 90%;
     height: 80%;
-    margin-bottom: 0;
+    outline: none;
+}
+
+#input-text:focus {
+    box-shadow: inset 0px 0px 6px 0px rgba(10,56,113,0.5);
+    transition: box-shadow 2s ease;
+}
+
+#input-text::placeholder {
+    font-size: 20px;
 }
 
 .input-area__info p {
@@ -70,6 +168,7 @@ body {
     background-color: var(--blue);
     color: var(--clear);
     font-weight: 200;
+    cursor: pointer;
 }
 
 .buttons__button--transparent {
@@ -85,16 +184,17 @@ body {
 }
 
 #output-text {
-    resize: none;
-    width: 90%;
     height: 100%;
+    outline: none;
 }
 
 .text-area {
     border: none;
-    border-radius: 8px;
+    resize: none;
+    width: 90%;
+    border-radius: 10px;
     box-shadow: 0px 0px 56px -14px rgba(0,0,0,0.15);
-    padding: 20px;
+    padding: 30px;
 }
 
 footer {
@@ -109,4 +209,11 @@ footer img {
     width: 25px;
     height: 25px;
     margin: 0 0.2em;
+    filter: opacity(0.7);
+}
+
+@media (max-width: 500px) {
+    .input-area {
+        width: auto;
+    }
 }
