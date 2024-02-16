@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/logo/moon-encryptor-icon-clear.png">
-    <title>Moon Encryptor</title>
+    <title>Moon Encryptor | Alura Challenge</title>
 </head>
 <body>
     <header>
-        <div class="logo"><img src="img/logo/moon-encryptor-logotext.png" alt="Moon Encryptor logo"></div>
+        <h1 class="logo"><img src="img/logo/moon-encryptor-logotext.png" alt="Moon Encryptor logo"></h1>
         <button id="switch" class="switch active">
             <span><img src="img/icons/moon.png"></span>
             <span><img src="img/icons/sun.png"></span>
@@ -27,6 +27,9 @@
     </header>
     <main class="flex-container">
         <section class="input-area">
+            <button class="input-area__modes">Alura Encryption</button>
+            <button class="input-area__modes">Caesar Cipher</button>
+            <button class="input-area__modes">Vigenere Cipher</button>
             <textarea id="input-text" class="text-area" placeholder="Write your message here"></textarea>
             <div class="input-area__info">
                 <img src="img/icons/info-circle-svgrepo-com.svg" alt="Info icon">
@@ -38,6 +41,11 @@
             </div>
         </section>
         <section class="output-area">
+            <div class="output-area__initial-info">
+                <img class="output-area__image" src="img/not-found.png" alt="Not found woman">
+                <p><strong>No message found</strong></p>
+                <p>Type in the text you want to encrypt or decrypt</p>
+            </div>
             <textarea id="output-text" class="text-area" readonly="readonly"></textarea>
         </section>
     </main>
