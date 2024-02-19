@@ -1,10 +1,9 @@
 :root {
     --clear: #f2f7fa;
     --blue: #0a3871;
-    --clear-blue: rgba(10, 56, 113, 0.2);
+    --border-blue: rgba(10, 56, 113, 0.2);
     --selected: #d3e3e5;
-
-} /* ECF5F8 */
+}
 
 body {
     font-family: "Poppins", sans-serif;
@@ -26,7 +25,7 @@ header {
     align-items: center;
     height: 60px;
     padding: 5px 5%;
-    border-bottom: 1px solid var(--clear-blue);
+    border-bottom: 1px solid var(--border-blue);
 }
 
 .logo {
@@ -37,7 +36,14 @@ header {
     padding-top: 7px;
     height: 55px;
     width: auto;
+    transition: all 150ms ease;
 }
+
+.logo img:hover {
+    transform: scale(1.01);
+}
+
+/* - Theme switch - */
 
 .switch {
     background-color: var(--selected);
@@ -48,6 +54,11 @@ header {
     display: flex;
     outline: none;
     margin-right: 3%;
+    transition: all 150ms ease;
+}
+
+.switch:hover {
+    transform: scale(1.02);
 }
 
 .switch::after {
@@ -74,7 +85,7 @@ header {
     left: unset;
 } */
 
-span {
+.switch__span {
     height: 25px;
     width: 25px;
     line-height: 25px;
@@ -84,26 +95,67 @@ span {
     padding: 2px;
 }
 
-span img {
+.switch__span img {
     height: 16px;
     width: auto;
 }
 
-fieldset {
-    display: inline-block;
-    border: none;
+/* - Language selection - */
+
+#language {
+    display: none;
 }
 
-select {
-    border: none;
-    outline: none;
-    padding: 10px 0;
+.language-selection {
     cursor: pointer;
+    user-select: none;
+    padding: 2px 0 0 10px;
+    border-radius: 10px;
+    transition: all 250ms ease;
+    line-height: 200%;
 }
 
-select option {
-    font-weight: 300;
-    font-size: 14px;
+#language:checked + label {
+    background-color: var(--selected);
+}
+
+.arrow-design{
+    height: 20px;
+    width: auto;
+    margin: 0 3px;
+    position: relative;
+    top: 3px;
+}
+
+.language-options input {
+    display: none;
+}
+
+.language-options {
+    display: none;
+    background-color: white;
+    list-style: none;
+    position: absolute;
+    top: 50px;
+    right: 5%;
+    border-radius: 10px;
+}
+
+.language-options li {
+    font-weight: 400;
+    font-size: 16px;
+    padding: 10px 2em;
+    border: 1px solid var(--border-blue);
+    border-radius: 10px 10px 0 0;
+}
+
+.language-options li:nth-child(2) {
+    border-radius: 0 0 10px 10px;
+    border-top: white;
+}
+
+.language-options label {
+    cursor: pointer;
 }
 
 /* ------------------------- Main ------------------------- */
@@ -119,49 +171,133 @@ select option {
     height: 85vh;
 }
 
-/* - Input Area - */
-
-.input-area__modes {
-    background-color: white;
-    color: var(--blue);
-    padding: 8px;
-    margin: 2%;
-    border: 1px solid var(--clear-blue);
-    border-radius: 10px;
-    box-shadow: 0 2px 8px #043b5b1a;
-    cursor: pointer;
-}
-
-.input-area__modes:first-child {
-    background-color: var(--selected);
-    color: var();
-}
-
-.text-area {
+textarea {
+    outline: none;
     border: none;
     resize: none;
     width: 90%;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 0px 0px 56px -14px rgba(0,0,0,0.15);
     padding: 30px;
 }
 
+textarea::selection {
+    background-color: var(--blue);
+    color: var(--clear);
+}
+
+/* -------- Input Area -------- */
+
 .input-area {
-    width: 65%;
     height: 100%;
     position: relative;
+    flex: 1 1 560px;
 }
+
+.input-area__modes {
+    margin: 3% 0;
+}
+
+.input-area__modes input {
+    display: none;
+}
+
+.input-area__modes input:checked + label {
+    background-color: var(--selected);
+}
+
+.input-area__modes label {
+    background-color: white;
+    color: var(--blue);
+    font-weight: 400;
+    padding: 8px;
+    margin: 2%;
+    border: 1px solid var(--border-blue);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #043b5b1a;
+    user-select: none;
+    cursor: pointer;
+    transition: all 250ms ease;
+}
+
+.input-area__modes label:hover {
+    background-color: var(--selected);
+}
+
+/* - Mobile modes switch - */
+
+.input-area__modes-mobile {
+    display: none;
+}
+
+#cipher-selection-menu {
+    display: none;
+}
+
+.cipher-options input {
+    display: none;
+}
+
+.modes-selector-label {
+    background-color: white;
+    color: var(--blue);
+    position: relative;
+    bottom: 20px;
+    font-weight: 400;
+    margin: 2%;
+    padding: 8px;
+    padding-right: 2px;
+    border: 1px solid var(--border-blue);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #043b5b1a;
+    user-select: none;
+    cursor: pointer;
+    transition: all 250ms ease;
+}
+
+#cipher-selection-menu:checked + .modes-selector-label {
+    background-color: var(--selected);
+}
+
+.cipher-options {
+    display: none;
+    background-color: white;
+    list-style: none;
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    border-radius: 10px;
+}
+
+.cipher-options li {
+    color: var(--blue);
+    font-weight: 400;
+    font-size: 20px;
+    padding: 10px 10px;
+    border: 2px solid var(--border-blue);
+    border-radius: 10px 10px 0 0;
+}
+
+.cipher-options li:nth-child(2) {
+    border-radius: 0;
+    border-top: white;
+}
+
+.cipher-options li:nth-child(3) {
+    border-radius: 0 0 10px 10px;
+    border-top: white;
+}
+
+.cipher-options label {
+    cursor: pointer;
+}
+
+/* - Input text and buttons - */
 
 #input-text {
     height: 70%;
-    outline: none;
     font-size: 24px;
     color: var(--blue);
-}
-
-#input-text:focus {
-    box-shadow: inset 0px 0px 6px 0px rgba(10,56,113,0.5);
-    transition: box-shadow 2s ease;
 }
 
 #input-text::placeholder {
@@ -171,16 +307,14 @@ select option {
 
 .input-area__info p {
     display: inline-block;
-    position: relative;
-    bottom: 2.6px;
-    right: 1.5px;
 }
 
 .input-area__info img {
     width: 20px;
     height: 20px;
     position: relative;
-    top: 2px;
+    top: 4px;
+    margin-right: 3px;
 }
 
 .buttons {
@@ -189,7 +323,7 @@ select option {
 }
 
 .buttons__button {
-    padding: 10px 60px;
+    padding: 12px 80px;
     margin: 1% 3%;
     border: none;
     border-radius: 20px;
@@ -197,6 +331,11 @@ select option {
     color: var(--clear);
     font-weight: 200;
     cursor: pointer;
+    transition: 250ms ease;
+}
+
+.buttons__button:hover {
+    transform: scale(1.05);
 }
 
 .buttons__button--transparent {
@@ -206,12 +345,12 @@ select option {
     font-weight: 300;
 }
 
-/* - Output Area - */
+/* -------- Output Area -------- */
 
 .output-area {
     width: 35%;
     padding-top: 20px;
-    min-width: 200px;
+    flex: 1.7 1;
     position: relative;
 }
 
@@ -219,9 +358,7 @@ select option {
     position: absolute;
     right: 0;
     left: 0;
-    margin: auto;
     height: 100%;
-    width: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -242,7 +379,12 @@ select option {
 #output-text {
     height: 90%;
     width: 100%;
-    outline: none;
+}
+
+/* - Additional Style - */
+
+.selected-option, .selected-language {
+    background-color: var(--selected);
 }
 
 /* ------------------------- Footer ------------------------- */
@@ -256,7 +398,12 @@ footer {
     font-size: 80%;
     width: 100%;
     font-weight: 300;
-    border: 1px solid var(--clear-blue);
+    border: 1px solid var(--border-blue);
+}
+
+.footer-icons {
+    display: inline-block;
+    margin-left: 0.5%;
 }
 
 footer img {
@@ -267,16 +414,106 @@ footer img {
     cursor: pointer;
 }
 
-/* ------------------------- Media Querys ------------------------- */
+/* ------------------------- Media Queries ------------------------- */
 
-@media (max-height: 745px) {
+@media screen and (max-width: 956px) {
+    .flex-container {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    textarea {
+        width: 100%;
+    }
+
+    .input-area {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .buttons__button {
+        padding: 15px 120px;
+        margin-top: 20px;
+    }
+
+    .output-area {
+        width: 100%;
+        padding: 0;
+    }
+
+    .output-area__initial-info {
+        padding: 0;
+    }
+
+    .output-area img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .flex-container {
+        height: unset;
+    }
+
+    .input-area__modes label {
+        display: none;
+    }
+
+    .input-area__modes-mobile {
+        display: block;
+    }
+
+    .input-area {
+        margin-top: 12px;
+    }
+
+    #input-text {
+        min-height: 500px;
+    }
+
+    .buttons {
+        flex-wrap: wrap;
+    }
+
+    .buttons__button {
+        padding: 18px;
+        flex-basis: 100%;
+    }
+
+    .buttons__button--transparent {
+        margin-bottom: 10%;
+    }
+    
+    #output-text {
+        min-height: 150px;
+    }
+
+    footer {
+        position: relative;
+    }
+
+    .footer-icons {
+        margin-left: 2%;
+    }
+}
+
+@media screen and (max-height: 745px) {
     footer {
         position: relative;
     }
 }
 
-@media (max-width: 500px) {
+@media screen and (min-height: 1025px) {
     .input-area {
-        width: auto;
+        min-height: 90%;
+    }
+
+    .input-area__modes {
+        margin-top: 9%;
+    }
+
+    .output-area {
+        min-height: 20%;
+        bottom: 3%;
     }
 }
