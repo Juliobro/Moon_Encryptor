@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,16 +14,16 @@
 <body>
     <header>
         <h1 class="logo"><a href="https://github.com/Juliobro/Moon_Encryptor" target="_blank">
-            <img src="img/logo/moon-encryptor-logotext.png" alt="Moon Encryptor logo">
+            <img id="logo" src="img/logo/moon-encryptor-logotext.png" alt="Moon Encryptor logo">
         </a></h1>
-        <button id="switch" class="switch active">
+        <button class="switch">
             <span class="switch__span" ><img src="img/icons/moon.png"></span>
             <span class="switch__span" ><img src="img/icons/sun.png"></span>
         </button>
         <input id="language" type="checkbox">
-        <label class="language-selection" for="language">English<img class="arrow-design" src="img/icons/arrow-down-svgrepo-com.svg"></label>
+        <label id="language-selection" for="language">English<img id="lang-arrow" class="arrow-design" src="img/icons/arrow-down-svgrepo-com.svg"></label>
         <ul class="language-options">
-            <li class="selected-language"><input id="english-lang" type="radio" name="languages" checked>
+            <li class="selected-radio"><input id="english-lang" type="radio" name="languages" checked>
                 <label for="english-lang">English</label></li>
             <li><input id="spanish-lang" type="radio" name="languages">
                 <label for="spanish-lang">Español</label></li>
@@ -40,20 +40,23 @@
                 <label for="vigenere">Vigenere Cipher</label>
             </form>
             <div class="input-area__modes-mobile">
-                <input id="cipher-selection-menu" type="checkbox">
-                <label class="modes-selector-label" for="cipher-selection-menu">Alura Encryption<img class="arrow-design" src="img/icons/arrow-down-svgrepo-com.svg"></label>
-                <ul class="cipher-options">
-                    <li class="selected-option"><input id="alura-mobile" type="radio" name="cipher-modes-mobile" checked>
+                <div class="modes-mobile__button-area">
+                    <input id="cipher-selector-button" type="checkbox">
+                    <label id="modes-selector-label" for="cipher-selector-button">Alura Encryption</label>
+                    <img id="cipher-arrow" class="arrow-design" src="img/icons/arrow-down-svgrepo-com.svg">
+                </div>
+                <ul class="modes-mobile__cipher-options">
+                    <li class="selected-radio"><input id="alura-mobile" type="radio" name="cipher-modes-mobile" checked onchange="updateLabelText(cipherLabel, this)">
                         <label for="alura-mobile">Alura Encryption</label></li>
-                    <li><input id="caesar-mobile" type="radio" name="cipher-modes-mobile">
+                    <li><input id="caesar-mobile" type="radio" name="cipher-modes-mobile" onchange="updateLabelText(cipherLabel, this)">
                         <label for="caesar-mobile">Caesar Cipher</label></li>
-                    <li><input id="vigenere-mobile" type="radio" name="cipher-modes-mobile">
+                    <li><input id="vigenere-mobile" type="radio" name="cipher-modes-mobile" onchange="updateLabelText(cipherLabel, this)">
                         <label for="vigenere-mobile">Vigenere Cipher</label></li>
                 </ul>
             </div>
             <textarea id="input-text" placeholder="Write your message here"></textarea>
             <div class="input-area__info">
-                <p><img src="img/icons/info-circle-svgrepo-com.svg" alt="Info icon">Only small letters, without accents or special characters</p>
+                <p><img id="info-icon" src="img/icons/info-circle-svgrepo-com.svg" alt="Info icon">Only small letters, without accents or special characters</p>
             </div>
             <div class="buttons">
                 <button class="buttons__button">Encrypt</button>
@@ -62,7 +65,7 @@
         </section>
         <section class="output-area">
             <div class="output-area__initial-info">
-                <img src="img/not-found.png" alt="Not found woman">
+                <img id="not-found-woman" src="img/not-found.png" alt="Not found woman">
                 <p><strong>No message found</strong></p>
                 <p>Type in the text you want to encrypt or decrypt</p>
             </div>
@@ -72,10 +75,12 @@
     <footer>
         <p>Julián Múnera - 2024</p>
         <div class="footer-icons">
-            <a href="https://github.com/Juliobro" target="_blank"><img src="img/icons/github-svgrepo-com.svg" alt="Github Icon"></a>
-            <a href="https://www.linkedin.com/in/julian-munera-dev/" target="_blank"><img src="img/icons/linkedin-svgrepo-com.svg" alt="LinkedIn Icon"></a>
-            <a href="https://app.aluracursos.com/user/julian-564915" target="_blank"><img src="img/icons/alura-icon.png" alt="Alura Icon"></a>
+            <a href="https://github.com/Juliobro" target="_blank"><img id="github-icon" src="img/icons/github-svgrepo-com.svg" alt="Github Icon"></a>
+            <a href="https://www.linkedin.com/in/julian-munera-dev/" target="_blank"><img id="linkedin-icon" src="img/icons/linkedin-svgrepo-com.svg" alt="LinkedIn Icon"></a>
+            <a href="https://app.aluracursos.com/user/julian-564915" target="_blank"><img id="alura-icon" src="img/icons/alura-icon.png" alt="Alura Icon"></a>
         </div>
     </footer>
+    <script src="js/menus-manage.js"></script>
+    <script src="js/dark-mode-switcher.js"></script>
 </body>
 </html>
