@@ -1,4 +1,4 @@
-:root {
+:root[class="light"] {
     --primary: #f2f7fa;
     --secondary: white;
     --tertiary: #0a3871;
@@ -396,6 +396,10 @@ textarea::-webkit-scrollbar-thumb {
     background-color: var(--primary);
     color: var(--tertiary);
     border: 1px solid var(--tertiary);
+}
+
+.buttons__button--es-lang {
+    padding: 12px 66px;
 }
 
 /* -------- Output Area -------- */
