@@ -12,16 +12,16 @@
 }
 
 :root[class="dark"] {
-    --primary: #21213b;
-    --secondary: #13142a;
+    --primary: #1b1b42;
+    --secondary: #0f1030;
     --tertiary: #f2f7fa;
     --border: rgba(108, 104, 137, 0.6);
-    --selected: #32314e;
-    --hover-selected: #21213b;
-    --text-area-color: #4e4c6b;
-    --encrypt-button-color: #4e4c6b;
-    --scrollbar-tumb: #0c0c22;
-    --text-selected-bg: #13142a;
+    --selected: #2c2b51;
+    --hover-selected: #1b1b42;
+    --text-area-color: #494870;
+    --encrypt-button-color: #494870;
+    --scrollbar-tumb: #08081c;
+    --text-selected-bg: #0f1030;
     --dark-mode-text: #f2f7fa;
 }
 
@@ -201,6 +201,8 @@ textarea {
     outline: none;
     border: none;
     resize: none;
+    font-size: 24px;
+    color: var(--tertiary);
     width: 90%;
     border-radius: 15px;
     box-shadow: 0px 0px 56px -14px rgba(0,0,0,0.15);
@@ -303,7 +305,7 @@ textarea::-webkit-scrollbar-thumb {
     display: none;
 }
 
-#modes-selector-label {
+#cipher-selector-label {
     cursor: pointer;
     position: relative;
     top: 1px;
@@ -311,7 +313,6 @@ textarea::-webkit-scrollbar-thumb {
 }
 
 .modes-mobile__cipher-options {
-    display: none;
     background-color: var(--secondary);
     list-style: none;
     position: absolute;
@@ -347,8 +348,6 @@ textarea::-webkit-scrollbar-thumb {
 
 #input-text {
     height: 70%;
-    font-size: 24px;
-    color: var(--tertiary);
 }
 
 #input-text::placeholder {
