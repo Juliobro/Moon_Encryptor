@@ -1,12 +1,12 @@
 /* Image selection */
-const logo = document.getElementById("logo");
-const langArrow = document.getElementById("lang-arrow");
-const cipherArrow = document.getElementById("cipher-arrow");
-const infoIcon = document.getElementById("info-icon");
-const githubIcon = document.getElementById("github-icon");
-const linkedinIcon = document.getElementById("linkedin-icon");
-const aluraIcon = document.getElementById("alura-icon");
-const notFoundWoman = document.getElementById("not-found-woman");
+const logo = document.getElementById('logo');
+const langArrow = document.getElementById('lang-arrow');
+const cipherArrow = document.getElementById('cipher-arrow');
+const infoIcon = document.getElementById('info-icon');
+const githubIcon = document.getElementById('github-icon');
+const linkedinIcon = document.getElementById('linkedin-icon');
+const aluraIcon = document.getElementById('alura-icon');
+const notFoundWoman = document.getElementById('not-found-woman');
 
 /* Theme mode selectors */
 const rootClass = document.documentElement.classList;
@@ -16,8 +16,8 @@ const switchBtn = document.querySelector('.switch');
 
 //Check the page theme to add the corresponding images and set theme switch visual position
 function imgSetter() {
-  if (rootClass.contains("dark")) {
-    switchBtn.classList.add("active");
+  if (rootClass.contains('dark')) {
+    switchBtn.classList.add('active');
 
     logo.src = "../img/logo/moon-encryptor-logotext-light.png";
     langArrow.src = "../img/icons/dark-mode/arrow-light.png";
@@ -28,7 +28,7 @@ function imgSetter() {
     aluraIcon.src = "../img/icons/dark-mode/alura-icon-light.png";
     notFoundWoman.src = "../img/not-found-dark.png";
   } else {
-    switchBtn.classList.remove("active");
+    switchBtn.classList.remove('active');
 
     logo.src = "../img/logo/moon-encryptor-logotext.png";
     langArrow.src = "../img/icons/arrow-down-svgrepo-com.svg";

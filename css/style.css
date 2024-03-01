@@ -9,6 +9,7 @@
     --encrypt-button-color: #0a3871;
     --scrollbar-tumb: rgba(10, 56, 113, 0.6);
     --text-selected-bg: #0a3871;
+    --area-info-advice: lightblue;
 }
 
 :root[class="dark"] {
@@ -23,6 +24,7 @@
     --scrollbar-tumb: #08081c;
     --text-selected-bg: #0f1030;
     --dark-mode-text: #f2f7fa;
+    --area-info-advice: #494870;
 }
 
 body {
@@ -301,6 +303,10 @@ textarea::-webkit-scrollbar-thumb {
     right: 2px;
 }
 
+.modes-mobile__cipher-options {
+    display: none;
+}
+
 .modes-mobile__cipher-options input {
     display: none;
 }
@@ -354,6 +360,11 @@ textarea::-webkit-scrollbar-thumb {
     font-size: 24px;
     color: rgba(10, 56, 113, 0.65);
     color: var(--dark-mode-text);
+}
+
+.input-area__info {
+    border-radius: 10px;
+    margin-right: 10%;
 }
 
 .input-area__info p {
@@ -472,6 +483,10 @@ footer img {
     background-color: var(--selected);
 }
 
+img {
+    user-select: none;
+}
+
 /* ------------------------- Media Queries ------------------------- */
 
 @media screen and (max-width: 956px) {
@@ -487,6 +502,11 @@ footer img {
     .input-area {
         display: flex;
         flex-direction: column;
+    }
+
+    .input-area__info {
+        margin: 0;
+        margin-top: 10px;
     }
 
     .buttons__button {

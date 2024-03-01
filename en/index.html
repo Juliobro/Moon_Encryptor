@@ -38,25 +38,25 @@
     <main class="flex-container">
         <section class="input-area">
             <form class="input-area__modes">
-                <input id="alura" type="radio" name="cipher-modes" checked>
+                <input id="alura" type="radio" name="cipher-modes" checked onchange="cipherModeSynchronizer(event)">
                 <label for="alura">Alura Encryption</label>
-                <input id="caesar" type="radio" name="cipher-modes">
+                <input id="caesar" type="radio" name="cipher-modes" onchange="cipherModeSynchronizer(event)">
                 <label for="caesar">Caesar Cipher</label>
-                <input id="vigenere" type="radio" name="cipher-modes">
+                <input id="vigenere" type="radio" name="cipher-modes" onchange="cipherModeSynchronizer(event)">
                 <label for="vigenere">Vigenere Cipher</label>
             </form>
             <div class="input-area__modes-mobile">
                 <div class="modes-mobile__button-area">
                     <input id="cipher-selector-button" type="checkbox">
-                    <label id="modes-selector-label" for="cipher-selector-button">Alura Encryption</label>
+                    <label id="cipher-selector-label" for="cipher-selector-button">Alura Encryption</label>
                     <img id="cipher-arrow" class="arrow-design">
                 </div>
                 <ul class="modes-mobile__cipher-options">
-                    <li class="selected-radio"><input id="alura-mobile" type="radio" name="cipher-modes-mobile" checked onchange="updateLabelText(cipherLabel, this)">
+                    <li class="selected-radio"><input id="alura-mobile" type="radio" name="cipher-modes-mobile" checked onchange="updateLabelText(cipherLabel, this); cipherModeSynchronizer(event)">
                         <label for="alura-mobile">Alura Encryption</label></li>
-                    <li><input id="caesar-mobile" type="radio" name="cipher-modes-mobile" onchange="updateLabelText(cipherLabel, this)">
+                    <li><input id="caesar-mobile" type="radio" name="cipher-modes-mobile" onchange="updateLabelText(cipherLabel, this); cipherModeSynchronizer(event)">
                         <label for="caesar-mobile">Caesar Cipher</label></li>
-                    <li><input id="vigenere-mobile" type="radio" name="cipher-modes-mobile" onchange="updateLabelText(cipherLabel, this)">
+                    <li><input id="vigenere-mobile" type="radio" name="cipher-modes-mobile" onchange="updateLabelText(cipherLabel, this); cipherModeSynchronizer(event)">
                         <label for="vigenere-mobile">Vigenere Cipher</label></li>
                 </ul>
             </div>
@@ -65,8 +65,8 @@
                 <p><img id="info-icon" alt="Info icon">Only small letters, without accents or special characters</p>
             </div>
             <div class="buttons">
-                <button class="buttons__button">Encrypt</button>
-                <button class="buttons__button buttons__button--transparent">Decrypt</button>
+                <button class="buttons__button" onclick="encrypt()">Encrypt</button>
+                <button class="buttons__button buttons__button--transparent" onclick="decrypt()">Decrypt</button>
             </div>
         </section>
         <section class="output-area">
@@ -90,5 +90,7 @@
     <script src="../js/theme-switcher.js"></script>
     <script src="../js/menus-manage.js"></script>
     <script src="../js/language-switcher.js"></script>
+    <script src="../js/ciphers.js"></script>
+    <script src="../js/encrypt-buttons.js"></script>
 </body>
 </html>
