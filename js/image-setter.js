@@ -21,29 +21,29 @@ function imgSetter() {
   if (rootClass.contains('dark')) {
     switchBtn.classList.add('active');
 
-    logo.src = "../img/logo/moon-encryptor-logotext-light.png";
-    langArrow.src = "../img/icons/dark-mode/arrow-light.png";
-    cipherArrow.src = "../img/icons/dark-mode/arrow-light.png";
-    infoIcon.src = "../img/icons/dark-mode/info-icon-light.png";
-    copyIcon.src = "../img/icons/dark-mode/copy-icon-light.png"
-    copiedIcon.src = "../img/icons/dark-mode/check-icon-light.png"
-    githubIcon.src = "../img/icons/dark-mode/github-icon-light.png";
-    linkedinIcon.src = "../img/icons/dark-mode/linkedin-icon-light.png";
-    aluraIcon.src = "../img/icons/dark-mode/alura-icon-light.png";
-    notFoundWoman.src = "../img/not-found-dark.png";
+    logo.src = "img/logo/moon-encryptor-logotext-light.png";
+    langArrow.src = "img/icons/dark-mode/arrow-light.png";
+    cipherArrow.src = "img/icons/dark-mode/arrow-light.png";
+    infoIcon.src = "img/icons/dark-mode/info-icon-light.png";
+    copyIcon.src = "img/icons/dark-mode/copy-icon-light.png"
+    copiedIcon.src = "img/icons/dark-mode/check-icon-light.png"
+    githubIcon.src = "img/icons/dark-mode/github-icon-light.png";
+    linkedinIcon.src = "img/icons/dark-mode/linkedin-icon-light.png";
+    aluraIcon.src = "img/icons/dark-mode/alura-icon-light.png";
+    notFoundWoman.src = "img/not-found-dark.png";
   } else {
     switchBtn.classList.remove('active');
 
-    logo.src = "../img/logo/moon-encryptor-logotext.png";
-    langArrow.src = "../img/icons/arrow-down-svgrepo-com.svg";
-    cipherArrow.src = "../img/icons/arrow-down-svgrepo-com.svg";
-    infoIcon.src = "../img/icons/info-circle-svgrepo-com.svg";
-    copyIcon.src = "../img/icons/copy-icon.png"
-    copiedIcon.src = "../img/icons/check-icon.png"
-    githubIcon.src = "../img/icons/github-svgrepo-com.svg";
-    linkedinIcon.src = "../img/icons/linkedin-svgrepo-com.svg";
-    aluraIcon.src = "../img/icons/alura-icon.png";
-    notFoundWoman.src = "../img/not-found.png";
+    logo.src = "img/logo/moon-encryptor-logotext.png";
+    langArrow.src = "img/icons/arrow-down-svgrepo-com.svg";
+    cipherArrow.src = "img/icons/arrow-down-svgrepo-com.svg";
+    infoIcon.src = "img/icons/info-circle-svgrepo-com.svg";
+    copyIcon.src = "img/icons/copy-icon.png"
+    copiedIcon.src = "img/icons/check-icon.png"
+    githubIcon.src = "img/icons/github-svgrepo-com.svg";
+    linkedinIcon.src = "img/icons/linkedin-svgrepo-com.svg";
+    aluraIcon.src = "img/icons/alura-icon.png";
+    notFoundWoman.src = "img/not-found.png";
   }
 }
 
