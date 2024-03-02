@@ -128,7 +128,7 @@ const originalVowel= [
 
 //This function convert uppercase letters to lowercase, then remove accents from the letters, and finally, delete any char that is not a standard letter, space or line break. If there is no changes to do, the function just returns the original text.
 function formatText(text) {
-  let cleanText = text.replace(/[\s]/g, ''); //Exclude every space in the text before performing the check with charsInABC
+  let cleanText = text.replaceAll(/\s/g, ''); //Exclude every space in the text before performing the check with charsInABC
   let charsInABC = cleanText.split('').every(char => ABC.includes(char));  //Convert the text without spaces into an array where each character is an element. Then check if each one is in the ABC
   //In the affirmative case the function will simply return the text it received as a parameter. If at least one character is not in the ABC, the function will proceed with the rest of the process until returning finalText.
   if (charsInABC) {

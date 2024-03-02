@@ -35,12 +35,16 @@ body {
     min-height: 100vh;
 }
 
+h1 {
+    font-size: 1rem;
+}
+
 /* ------------------------- Header ------------------------- */
 
 header {
     background-color: var(--secondary);
     position: fixed;
-    z-index: 100;
+    z-index: 10;
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -56,6 +60,7 @@ header {
 
 .logo img {
     padding-top: 7px;
+    margin-bottom: 5px;
     height: 55px;
     width: auto;
     transition: all 150ms ease;
@@ -92,7 +97,6 @@ header {
     background-color: var(--primary);
     top: 0;
     left: 0;
-    right: unset;
     border-radius: 50%;
     transition: all 150ms ease;
     box-shadow: 0px 0px 2px 3px rgba(0, 0, 0, 0.2);
@@ -421,6 +425,50 @@ textarea::-webkit-scrollbar-thumb {
     position: relative;
 }
 
+.output-area__copy-button {
+    background-color: var(--text-area-color);
+    position: absolute;
+    top: 50px;
+    left: -35px;
+    width: 50px;
+    height: 35px;
+    padding: 2px 4px 0;
+    border-radius: 10px;
+    transition: transform 200ms ease;
+    transform: translateX(100%);
+}
+
+.copy-active {
+    transform: translateX(0%);
+}
+
+.copy-button__button {
+    background-color: var(--text-area-color);
+    position: absolute;
+    width: auto;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+.copy-button__button img {
+    width: 30px;
+    height: 30px;
+}
+
+#copy {
+    display: inline-block;
+}
+
+#copied {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: auto;
+}
+
 .output-area__initial-info {
     position: absolute;
     right: 0;
@@ -431,6 +479,7 @@ textarea::-webkit-scrollbar-thumb {
     align-items: center;
     justify-content: center;
     padding-bottom: 10%;
+    z-index: 1;
 }
 
 .output-area__initial-info p {
@@ -445,8 +494,20 @@ textarea::-webkit-scrollbar-thumb {
 }
 
 #output-text {
+    position: relative;
     height: 90%;
     width: 100%;
+}
+
+.output-area__copy-button-mobile {
+    display: none;
+    background-color: var(--primary);
+    color: var(--tertiary);
+    font-weight: 300;
+    padding: 15px;
+    border-radius: 20px;
+    border: 1px solid var(--tertiary);
+    cursor: pointer;
 }
 
 /* ------------------------- Footer ------------------------- */
@@ -519,12 +580,26 @@ img {
         padding: 0;
     }
 
+    .output-area__copy-button {
+        display: none;
+    }
+
     .output-area__initial-info {
         padding: 0;
     }
 
     .output-area img {
         display: none;
+    }
+
+    .output-area__copy-button-mobile {
+        width: 75%;
+        margin: 10px 0 0 12%;
+    }
+
+    footer {
+        position: relative;
+        margin-top: 50px;
     }
 }
 
@@ -567,8 +642,14 @@ img {
         min-height: 150px;
     }
 
+    .output-area__copy-button-mobile {
+        width: 100%;
+        margin: 10px 2% 0 0;
+    }
+
     footer {
         position: relative;
+        margin: 0;
     }
 
     .footer-icons {

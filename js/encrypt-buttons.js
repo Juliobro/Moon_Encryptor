@@ -10,6 +10,12 @@ const caesar = document.getElementById('caesar');
 /* Width controller */
 const windowWidth = window.innerWidth;
 
+/* Copy elements */
+const copyBtn = document.querySelector('.output-area__copy-button');
+const copyBtnMobile = document.querySelector('.output-area__copy-button-mobile')
+const copyImg = document.getElementById('copy');
+const copiedImg = document.getElementById('copied');
+
 /* ------------------------------ Functions zone ------------------------------ */
 function encrypt() {
   inputText.value = formatText(inputText.value);
@@ -22,7 +28,8 @@ function encrypt() {
     outputText.value = vigenereEncrypt(inputText.value);
   }
 
-  manageOutputArea()
+  showCopyButton();
+  manageOutputArea();
 }
 
 function decrypt() {
@@ -36,7 +43,8 @@ function decrypt() {
     outputText.value = vigenereDecrypt(inputText.value);
   }
 
-  manageOutputArea()
+  showCopyButton();
+  manageOutputArea();
 }
 
 
@@ -46,11 +54,36 @@ function manageOutputArea() {
   outputText.style.minHeight = windowWidth <= 764 && inputText.value !== '' ? '350px' : '150px';
 }
 
-//Just returns the output area to its original state
+//Just returns the output area to its original state when input area is empty
 inputText.addEventListener('input', function() {
   if (this.value === '') {
     initialInfo.style.display = 'flex';
     outputText.style.minHeight = '150px';
     outputText.value = '';
+    copyBtn.classList.remove('copy-active');
+    copyBtnMobile.style.display = 'none';
   }
 });
+
+//Show the copy button and his styles depending of the window width
+function showCopyButton() {
+  if (windowWidth <= 956) {
+    copyBtnMobile.style.display = 'block';
+  } else {
+    copyBtn.classList.add('copy-active');
+    copyImg.style.display = 'inline-block';
+    copiedImg.style.display = 'none';
+  }
+}
+
+//Just a listener to copy the output text value to the clipboard and add styles
+function copy(button) {
+  button.addEventListener('click', () => {
+    navigator.clipboard.writeText(outputText.value)
+    copyImg.style.display = 'none';
+    copiedImg.style.display = 'inline-block';
+  });
+}
+
+copy(copyBtn);
+copy(copyBtnMobile);
