@@ -28,8 +28,10 @@ function encrypt() {
     outputText.value = vigenereEncrypt(inputText.value);
   }
 
-  showCopyButton();
-  manageOutputArea();
+  if (inputText.value !== '') {
+    manageOutputArea();
+    showCopyButton();
+  }
 }
 
 function decrypt() {
@@ -43,16 +45,12 @@ function decrypt() {
     outputText.value = vigenereDecrypt(inputText.value);
   }
 
-  showCopyButton();
-  manageOutputArea();
+  if (inputText.value !== '') {
+    manageOutputArea();
+    showCopyButton();
+  }
 }
 
-
-//Manage output area for a better and confortable style
-function manageOutputArea() {
-  initialInfo.style.display = inputText.value == '' ? 'flex' : 'none';
-  outputText.style.minHeight = windowWidth <= 764 && inputText.value !== '' ? '350px' : '150px';
-}
 
 //Just returns the output area to its original state when input area is empty
 inputText.addEventListener('input', function() {
@@ -64,6 +62,12 @@ inputText.addEventListener('input', function() {
     copyBtnMobile.style.display = 'none';
   }
 });
+
+//Manage output area for a better and confortable style
+function manageOutputArea() {
+  initialInfo.style.display = 'none';
+  outputText.style.minHeight = windowWidth <= 764 ? '350px' : '150px';
+}
 
 //Show the copy button and his styles depending of the window width
 function showCopyButton() {
