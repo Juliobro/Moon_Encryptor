@@ -4,7 +4,7 @@ const aluraCoders = [
   ["i", "imes"],
   ["a", "ai"],
   ["o", "ober"],
-  ["u", "ufat"],
+  ["u", "ufat"]
 ];
 
 function aluraEncrypt(text) {
@@ -15,7 +15,9 @@ function aluraEncrypt(text) {
 }
 
 function aluraDecrypt(text) {
-  for (let [original, encrypted] of aluraCoders) {
+  const aluraCodersReversed = [...aluraCoders].reverse(); //It's used to avoid certain bugs
+
+  for (let [original, encrypted] of aluraCodersReversed) {
     text = text.replaceAll(encrypted, original);
   }
   return text;
